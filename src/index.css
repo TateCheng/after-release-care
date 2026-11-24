@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #5267a3;
+  --ink: #fff8ed;
+  --muted: #e4e9f7;
+  --rule: rgba(255, 248, 237, 0.48);
+  --blue: #203378;
+  --orange: #ff8b68;
+  --prison: #162975;
+  --building: #8295c4;
+  --hospital: #fff8ed;
+  --person-white: #fff8ed;
+  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --sans: Arial, "Helvetica Neue", sans-serif;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--paper); }
+button, a { -webkit-tap-highlight-color: transparent; }

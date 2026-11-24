@@ -1,0 +1,453 @@
+.page-shell {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.topbar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 20px;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.topbar a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.wordmark {
+  font-weight: 700;
+}
+
+.about-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1px solid var(--ink);
+}
+
+.story {
+  position: relative;
+  min-height: 100dvh;
+}
+
+.visual-stage {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 100dvh;
+  min-height: 560px;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.steps {
+  position: relative;
+  z-index: 5;
+  margin-top: -100dvh;
+  pointer-events: none;
+}
+
+.step {
+  min-height: 120dvh;
+  display: flex;
+  align-items: center;
+  padding: 88px 20px 64px;
+  scroll-margin-top: 0;
+}
+
+.step-opening {
+  min-height: 115dvh;
+}
+
+.step-copy {
+  width: min(100%, 420px);
+  padding: 24px;
+  background: var(--paper);
+  pointer-events: auto;
+}
+
+.opening-copy {
+  width: min(100%, 540px);
+  padding: 28px 24px;
+}
+
+.chapter-label {
+  margin: 0 0 18px;
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+h1, h2, p {
+  margin-top: 0;
+}
+
+h1, h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: clamp(46px, 12vw, 72px);
+  line-height: 0.98;
+}
+
+h2 {
+  margin-bottom: 22px;
+  font-size: clamp(38px, 10vw, 58px);
+  line-height: 1.02;
+}
+
+.step-copy > p:not(.chapter-label) {
+  max-width: 34ch;
+  margin-bottom: 18px;
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.step-copy .standfirst {
+  font-size: 22px;
+  line-height: 1.45;
+}
+
+.step-copy .sample-note {
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.sample-note strong {
+  color: var(--ink);
+}
+
+.scroll-cue {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 24px;
+  margin-top: 14px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+}
+
+.scroll-cue span:last-child {
+  color: var(--orange);
+  font-size: 20px;
+}
+
+.crowd {
+  position: absolute;
+  right: 3vw;
+  bottom: 10vh;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 8px;
+  width: min(45vw, 520px);
+  color: var(--blue);
+  opacity: 0.68;
+  transform-origin: center bottom;
+}
+
+.crowd .person-svg {
+  width: 100%;
+  height: 20px;
+}
+
+.prison {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.prison-wall {
+  position: absolute;
+  top: 12%;
+  bottom: 12%;
+  width: 35%;
+  background: var(--prison);
+}
+
+.gate-left { left: 9%; }
+.gate-right { right: 9%; }
+
+.gate-top {
+  position: absolute;
+  top: 12%;
+  left: 44%;
+  width: 12%;
+  height: 9%;
+  background: var(--prison);
+}
+
+.gate-bars {
+  position: absolute;
+  top: 21%;
+  bottom: 12%;
+  left: 44%;
+  width: 12%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gate-bars i {
+  width: 4px;
+  background: var(--paper);
+}
+
+.prison-label {
+  position: absolute;
+  left: 44%;
+  bottom: 8%;
+  width: 12%;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--ink);
+}
+
+.protagonist {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 15%;
+  width: clamp(110px, 12vw, 180px);
+  margin-left: clamp(-90px, -6vw, -55px);
+  color: var(--person-white);
+  opacity: 0;
+  transform-origin: center bottom;
+}
+
+.person-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+.protagonist .person-svg {
+  transform-origin: center bottom;
+}
+
+.opening-rule {
+  position: absolute;
+  right: 4vw;
+  bottom: 7vh;
+  width: min(42vw, 500px);
+  height: 1px;
+  background: var(--ink);
+  transform-origin: right center;
+}
+
+.community {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform-origin: center bottom;
+}
+
+.building {
+  position: absolute;
+  bottom: 22%;
+  background: var(--building);
+}
+
+.building-one {
+  left: 48%;
+  width: 12%;
+  height: 28%;
+}
+
+.building-two {
+  left: 61%;
+  width: 11%;
+  height: 39%;
+}
+
+.hospital {
+  position: absolute;
+  right: 7%;
+  bottom: 22%;
+  width: 24%;
+  height: 44%;
+  background: var(--hospital);
+  border: 1px solid var(--prison);
+  color: var(--prison);
+  text-align: center;
+}
+
+.hospital-name {
+  margin-top: 9%;
+  font-family: var(--sans);
+  font-size: clamp(12px, 1.3vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.hospital-cross {
+  width: 15%;
+  margin-top: 7%;
+  color: var(--orange);
+}
+
+.hospital-door {
+  position: absolute;
+  bottom: 0;
+  left: 38%;
+  width: 24%;
+  height: 34%;
+  background: var(--building);
+}
+
+.road {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 20%;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0;
+}
+
+.road span {
+  position: absolute;
+  left: 12%;
+  right: 20%;
+  top: 18px;
+  border-top: 2px dashed var(--orange);
+}
+
+.stage-meta {
+  position: absolute;
+  right: 20px;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.stage-meta span:first-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.methodology {
+  position: relative;
+  z-index: 8;
+  padding: 64px 24px max(64px, env(safe-area-inset-bottom));
+  background: var(--prison);
+  color: var(--ink);
+}
+
+.methodology .chapter-label {
+  color: var(--orange);
+}
+
+.methodology p:not(.chapter-label) {
+  max-width: 65ch;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.methodology a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 16px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 5px;
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+@media (max-width: 767px) {
+  .topbar { padding: 16px 20px; }
+  .about-link { border-bottom: 0; }
+  .step:not(.step-opening) { align-items: flex-start; padding-top: 57dvh; padding-bottom: 64px; }
+  .step:not(.step-opening) .step-copy {
+    width: 100%;
+    padding: 22px 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .step-copy > p:not(.chapter-label) { font-size: 18px; line-height: 1.45; }
+  .opening-copy { padding-right: 0; padding-left: 0; }
+  .crowd, .opening-rule { display: none; }
+  .prison-wall { top: 10%; bottom: 43%; width: 38%; }
+  .gate-left { left: 4%; }
+  .gate-right { right: 4%; }
+  .gate-top { top: 10%; left: 42%; width: 16%; height: 6%; }
+  .gate-bars { top: 16%; bottom: 43%; left: 42%; width: 16%; }
+  .prison-label { top: 34%; bottom: auto; left: 30%; width: 40%; }
+  .protagonist { bottom: 43%; width: 64px; margin-left: -32px; }
+  .hospital { right: 7%; bottom: 48%; width: 40%; height: 27%; }
+  .building { bottom: 48%; }
+  .building-one { left: 13%; width: 17%; height: 17%; }
+  .building-two { left: 32%; width: 14%; height: 23%; }
+  .road { bottom: 46%; }
+  .stage-meta { font-size: 10px; }
+}
+
+@media (min-width: 768px) {
+  .topbar { padding: 28px 4vw; }
+  .step { padding: 96px 6vw 72px; }
+  .step-copy, .opening-copy { padding: 28px 0; background: transparent; }
+  .step:not(.step-opening) .step-copy {
+    padding: 28px 24px;
+    background: var(--paper);
+    box-shadow: 0 0 0 8px var(--paper);
+  }
+  .step-copy > p:not(.chapter-label) { font-size: 22px; }
+  .step-copy .sample-note { font-size: 14px; }
+  .crowd { grid-template-columns: repeat(15, 1fr); gap: 8px 10px; }
+  .crowd .person-svg { height: 26px; }
+  .stage-meta { right: 4vw; left: 4vw; }
+  .methodology { padding: 80px 6vw; }
+}
+
+@media (min-width: 1200px) {
+  h1 { font-size: 82px; }
+  .step-copy { width: 390px; }
+  .opening-copy { width: 540px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .crowd, .prison, .opening-rule { display: none; }
+  .community, .road, .protagonist { opacity: 1; transform: none; }
+  .protagonist { left: 48%; }
+}
